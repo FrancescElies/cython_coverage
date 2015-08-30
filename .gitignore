@@ -4,3 +4,5 @@
 *.so
 build/
 dist/
+./pkg/coverage_test_pyx.pxi
+
