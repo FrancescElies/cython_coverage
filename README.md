@@ -1,9 +1,5 @@
-```
-    python -c 'import shutil; shutil.copy("pkg/coverage_test_pyx.pyx", "pkg/coverage_test_pyx.pxi")'
-    python setup.py build_ext -i
-    python coverage_test.py
-```
+README
 
-```
-nosetests --with-coverage --cover-package pkg tests/test*.py
-```
+`./nose_test.sh`
+
+`./coverage_test.sh`
