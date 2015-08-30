@@ -1,0 +1,38 @@
+Coverage reporting with 
+# cython: linetrace=True
+# distutils: define_macros=CYTHON_TRACE=1
+
+-- .coveragerc --
+[run]
+plugins = Cython.Coverage
+
+Depending on the coverage version I'm using I get either empty report or an
+exception raised.
+
+coverage reporting using coverage=3.7.1 cython=0.23.1
+Traceback (most recent call last):
+  File "coverage_test.py", line 65, in <module>
+    run_coverage(coverage_test_py)
+  File "coverage_test.py", line 47, in run_coverage
+    module_path, out.getvalue())
+AssertionError: 'pkg/coverage_test_py.py' not found in coverage report:
+
+Name                   Stmts   Miss  Cover   Missing
+----------------------------------------------------
+
+coverage reporting using coverage=4.0b2 cython=0.23.1
+Traceback (most recent call last):
+  File "coverage_test.py", line 65, in <module>
+    run_coverage(coverage_test_py)
+  File "coverage_test.py", line 43, in run_coverage
+    cov.report(file=out)
+  File "/home/xesc/miniconda/lib/python2.7/site-packages/coverage/control.py",
+line 968, in report
+    return reporter.report(morfs, outfile=file)
+  File "/home/xesc/miniconda/lib/python2.7/site-packages/coverage/summary.py",
+line 109, in report
+    raise CoverageException("No data to report.")
+coverage.misc.CoverageException: No data to report.
+
+
+
