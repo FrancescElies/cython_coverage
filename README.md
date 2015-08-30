@@ -3,3 +3,7 @@
     python setup.py build_ext -i
     python coverage_test.py
 ```
+
+```
+nosetests --with-coverage --cover-package pkg tests/test*.py
+```
